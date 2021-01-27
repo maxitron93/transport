@@ -1,0 +1,250 @@
+* {
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+    transition: 0.2s;
+    font-size: 16px;
+    font-family: 'Noto Sans', sans-serif;
+    background-color: rgb(15,15,15);
+    color: rgb(210,210,210);
+    -webkit-user-select: none;
+}
+
+#loader_container {
+    position: fixed;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100vw;
+    z-index: 10000000;
+    transition: opacity 1s;
+}
+
+#ring {
+    position: absolute;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    transition: opacity 1s;
+    animation: ring 2s linear infinite;
+}
+
+@keyframes ring {
+    0% {
+        transform: rotate(0deg);
+        box-shadow: 1px 5px 2px orange;
+    }
+    50% {
+        transform: rotate(180deg);
+        box-shadow: 1px 5px 2px darkturquoise;
+    }
+    100% {
+        transform: rotate(360deg);
+        box-shadow: 1px 5px 2px orange;
+    }
+}
+
+#ring:before {
+    position: absolute;
+    content: '';
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    box-shadow: 0 0 5px rgba(255,255,255,.3);
+}
+
+#loader_container span {
+    z-index: 999999999999999999;
+    font-size: 120%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#type_selector_container {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 1200px;
+    height: 80px;
+    margin: 0px auto;
+}
+
+#info_tooltip {
+    display:none;
+    position: absolute;
+    left: 518px;
+    top: 65px;
+    width: 672px;
+    height: 100px;
+    font-size: 80%;
+    padding: 5px 10px;
+    border: 0.5px solid orange;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+#info_tooltip_heading {
+    color: orange;
+    font-size: 110%;
+}
+
+#info_tooltip_message {
+    font-size: 100%;
+}
+
+#main_heading{
+    position: absolute;
+    left: 10px;
+    font-size: 150%;
+}
+
+.type_selector {
+    margin: 0px 10px;
+    padding: 5px 15px;
+    font-size: 100%;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.type_border {
+    margin-right: 60px;
+}
+
+#viz_container {
+    position: relative;
+    display: flex;
+    width: 1200px;
+    height: 470px;
+    margin: 0px auto;
+}
+
+#tooltip {
+    display:none;
+    position: fixed;
+    font-size: 80%;
+    padding: 5px 10px;
+    border: 0.5px solid gray;
+    border-radius: 5px;
+    z-index: 100;
+}
+
+.display_area {
+    position: relative;
+    width: 100px;
+    height: 470px;
+}
+
+.viz_heading {
+    position: absolute;
+    top: 0px;
+    font-size: 120%;
+}
+
+#tram_heading {
+    left: 20px;
+}
+
+#train_heading {
+    right: 20px;
+}
+
+.route_display_area {
+    width: 100px;
+    height: 470px;
+}
+
+.tram_route_button {
+    margin: 0px 10px 5px 10px;
+    border: 0.5px solid gray;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 70%;
+    cursor: pointer;
+}
+
+.train_route_button {
+    margin: 0px 10px 10px 10px;
+    padding: 1px 0px;
+    border: 0.5px solid gray;
+    border-radius: 3px;
+    text-align: center;
+    font-size: 70%;
+    cursor: pointer;
+}
+
+.tram_route_button:hover,
+.train_route_button:hover,
+.type_selector:hover {
+    color: rgb(3, 3, 50);
+    background-color: orange;
+}
+
+.network_display_area {
+    width: 500px;
+    height: 470px;
+}
+
+.network_line {
+    cursor: pointer;
+}
+
+#trend_viz {
+    display: none;
+    position: relative;
+    width: 1000px;
+    height: 470px;
+}
+
+#trend_heading {
+    left: 20px;
+}
+
+text {
+    font-size: 85%;
+}
+
+.x_axis line,
+.x_axis path,
+.y_axis path {
+    stroke: none;
+}
+
+.y_axis line {
+    opacity: 0.2;
+}
+
+.legend_text {
+    font-size: 75%;
+}
+
+#legend {
+    width: 1000px;
+    padding-top: 10px;
+    margin: 0px auto;
+    font-size: 90%;
+}
+
+.legend_number {
+    display: inline-block;
+    padding: 3px 0px;
+    width: 70px;
+    text-align: center;
+    border-radius: 3px;
+}
+
+#line_viz {
+    display: none;
+}
+
+.active {
+    background-color: orange;
+    border: 0.5px solid rgb(3, 3, 50);
+    /* color: rgb(3, 3, 50); */
+    color: rgb(15,15,15);
+}

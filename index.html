@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <title>Victoria Public Transport</title>
+</head>
+<body>
+    <div id="loader_container">
+        <div id="ring"></div>
+        <span>loading...</span>
+    </div>
+    <div id="type_selector_container">
+        <div id="info_tooltip">
+            <span id="info_tooltip_heading"></span><span id="info_tooltip_message"></span>
+        </div>
+        <div id="main_heading">Tram and Train Networks in Melbourne</div>
+        <div class="type_selector metric_selector active" id="rel">Reliability</div>
+        <div class="type_selector metric_selector" id="punc">Punctuality</div>
+        <div class="type_border type_selector metric_selector" id="serv">Service Changes</div>
+        <div class="type_selector visualization_selector viz_selector active" id="network">Network</div>
+        <div class="type_selector visualization_selector viz_selector" id="trend">Trend</div>
+    </div>
+    <div id="viz_container">
+        <div id="tooltip"></div>
+        <div class="display_area route_display_area" id="tram_select_area">
+            <div class="tram_route_button">1</div>
+            <div class="tram_route_button">3</div>
+            <div class="tram_route_button">5</div>
+            <div class="tram_route_button">6</div>
+            <div class="tram_route_button">11</div>
+            <div class="tram_route_button">12</div>
+            <div class="tram_route_button">16</div>
+            <div class="tram_route_button">19</div>
+            <div class="tram_route_button">48</div>
+            <div class="tram_route_button">57</div>
+            <div class="tram_route_button">58</div>
+            <div class="tram_route_button">59</div>
+            <div class="tram_route_button">64</div>
+            <div class="tram_route_button">67</div>
+            <div class="tram_route_button">70</div>
+            <div class="tram_route_button">72</div>
+            <div class="tram_route_button">75</div>
+            <div class="tram_route_button">78</div>
+            <div class="tram_route_button">82</div>
+            <div class="tram_route_button">86</div>
+            <div class="tram_route_button">96</div>
+            <div class="tram_route_button">109</div>
+        </div>
+        <div class="display_area network_display_area" id="network_tram">
+            <div class="viz_heading" id="tram_heading"></div>
+        </div>
+        <div class="display_area network_display_area" id="network_train">
+            <div class="viz_heading" id="train_heading"></div>
+        </div>
+        <div id="trend_viz">
+            <div class="viz_heading" id="trend_heading"></div>
+        </div>
+        <div class="display_area route_display_area" id="train_select_area">
+            <div class="train_route_button">Alamein</div>
+            <div class="train_route_button">Belgrave</div>
+            <div class="train_route_button">Craigieburn</div>
+            <div class="train_route_button">Cranbourne</div>
+            <div class="train_route_button">Frankston</div>
+            <div class="train_route_button">Glen Waverley</div>
+            <div class="train_route_button">Hurstbridge</div>
+            <div class="train_route_button">Lilydale</div>
+            <div class="train_route_button">Mernda</div>
+            <div class="train_route_button">Pakenham</div>
+            <div class="train_route_button">Sandringham</div>
+            <div class="train_route_button">Sunbury</div>
+            <div class="train_route_button">Upfield</div>
+            <div class="train_route_button">Werribee</div>
+            <div class="train_route_button">Williamstown</div>
+        </div>
+    </div>
+    <div id="legend"></div>
+    <script src="https://d3js.org/d3.v5.min.js"></script>
+    <script type="text/javascript" src="data.json"></script>
+    <script src="app.js"></script>
+</body>
+</html>
